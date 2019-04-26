@@ -4,14 +4,14 @@
 <ng-template #guest>
   <h3>Howdy, GUEST</h3>
   <p>Login to get started...</p>
-  <button (click)="auth.googleLogin()">
+  <button mat-raised-button color="primary" (click)="auth.googleLogin()">
     Login using Google
   </button>
 </ng-template>
 
 <ng-template #authenticated>
   <h3 *ngIf="auth.user | async as user">Hi, {{user.displayName}}</h3>
-  <button (click)="auth.signOut()" mat-menu-item type="button">Log Out</button>
+  <button mat-raised-button color="primary" (click)="auth.signOut()" type="button">Log Out</button>
 </ng-template>
 
 <router-outlet></router-outlet>
